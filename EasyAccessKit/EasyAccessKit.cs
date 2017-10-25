@@ -43,5 +43,29 @@ namespace EasyAccessKit
 
             return htmlContentBuilder;
         }
+
+        [Produces("text/html")]
+        public static IHtmlContent MainHeading(string content, string htmlClass)
+        {
+            IHtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
+
+            htmlContentBuilder.AppendHtmlLine("<h1 id='ez-main-heading' class='"+ htmlClass +"'>");
+            htmlContentBuilder.AppendHtmlLine(content);
+            htmlContentBuilder.AppendHtmlLine("</h1>");
+
+            return htmlContentBuilder;
+        }
+
+        [Produces("text/html")]
+        public static IHtmlContent HiddenMainHeading(string content, string htmlClass)
+        {
+            IHtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
+
+            htmlContentBuilder.AppendHtmlLine("<h1 id='ez-main-heading' style='visibility: hidden;' class='" + htmlClass + "'>");
+            htmlContentBuilder.AppendHtmlLine(content);
+            htmlContentBuilder.AppendHtmlLine("</h1>");
+
+            return htmlContentBuilder;
+        }
     }
 }
