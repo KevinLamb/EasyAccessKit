@@ -22,10 +22,8 @@ namespace DemoEasyAccess.Controllers
             return View();
         }
 
-        public IActionResult Contact()
+        public IActionResult DemoExamples()
         {
-            ViewData["Message"] = "Your contact page.";
-
             return View();
         }
 

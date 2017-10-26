@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@EasyAccessKit.MainHeading("Skip Menus")
+
+<p>To use the skip menu, simply use the <code>SkipMenu()</code> method in the Layout of your application. Place it after the body element in the layout and you should be good.</p>
+<p>Even though you can't see it, skip menus can help people who use assistive devices achieve what they want in a page faster. 
+    A skip menu is usually a invisible menu that is found by the first tab input the web page gets. When an assistive device goes over it, the device will let the 
+    user know it is a specifically made menu for them. The alternative to that is you have the correct heading index (start with h1) and the person using the assistive
+    device will navigate to the first heading. Either way, it leads us to the heading methods in the EasyAccessKit.
+    </p>
+
+<h2>Main Heading</h2>
+<p>The <code>MainHeading()</code> method is set in place to easily make a heading that the skip menu can link to and is set to be an h1 element.
+    This way the person using the assistive device will be able to know where to start either way they navigate to the main content, as stated above in the introduction.</p>
+<p>To view more about the <code>MainHeading()</code> method, please visit the documentation for the EasyAccessKit.</p>
+
+<h2>Hidden Main Heading</h2>
+<p>
+    The <code>HiddenMainHeading()</code> method is for pages that don't need a heading. Putting an invisible heading into the browser will help the person 
+    using the assistive device to move to the content you want them to focus on. It's the same as the <code>MainHeading()</code> but you can't see it.
+</p>
+<p>To view more about the <code>HiddenMainHeading()</code> method, please visit the documentation for the EasyAccessKit.</p>
+
