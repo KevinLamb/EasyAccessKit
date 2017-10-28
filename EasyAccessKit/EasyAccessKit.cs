@@ -21,31 +21,7 @@ namespace EasyAccessKit
         }
 
         [Produces("text/html")]
-        public static IHtmlContent MainHeading(string content)
-        {
-            IHtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
-
-            htmlContentBuilder.AppendHtmlLine("<h1 id='ez-main-heading'>");
-            htmlContentBuilder.AppendHtmlLine(content);
-            htmlContentBuilder.AppendHtmlLine("</h1>");
-
-            return htmlContentBuilder;
-        }
-
-        [Produces("text/html")]
-        public static IHtmlContent HiddenMainHeading(string content)
-        {
-            IHtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
-
-            htmlContentBuilder.AppendHtmlLine("<h1 id='ez-main-heading' style='visibility: hidden;'>");
-            htmlContentBuilder.AppendHtmlLine(content);
-            htmlContentBuilder.AppendHtmlLine("</h1>");
-
-            return htmlContentBuilder;
-        }
-
-        [Produces("text/html")]
-        public static IHtmlContent MainHeading(string content, string htmlClass)
+        public static IHtmlContent MainHeading(string content, string htmlClass = "")
         {
             IHtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
 
@@ -57,7 +33,7 @@ namespace EasyAccessKit
         }
 
         [Produces("text/html")]
-        public static IHtmlContent HiddenMainHeading(string content, string htmlClass)
+        public static IHtmlContent HiddenMainHeading(string content, string htmlClass = "")
         {
             IHtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
 
