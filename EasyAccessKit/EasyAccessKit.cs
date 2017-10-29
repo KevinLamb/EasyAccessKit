@@ -21,24 +21,54 @@ namespace EasyAccessKit
         }
 
         [Produces("text/html")]
-        public static IHtmlContent MainHeading(string content, string htmlClass = "")
+        public static IHtmlContent MainHeading(string content, string htmlClass = "", Dictionary<string, string> attributes = null)
         {
+            if (attributes == null)
+            {
+                attributes.Add("", "");
+            }
+
             IHtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
 
-            htmlContentBuilder.AppendHtmlLine("<h1 id='ez-main-heading' class='"+ htmlClass +"'>");
+            //Start h1
+            htmlContentBuilder.AppendHtml("<h1 id='ez-main-heading' class='" + htmlClass + "'");
+            foreach (KeyValuePair<string, string> attribute in attributes)
+            {
+                htmlContentBuilder.AppendHtml(attribute.Key + "='" + attribute.Value + "'");
+            }
+            htmlContentBuilder.AppendHtml(">");
+
+            //Content
             htmlContentBuilder.AppendHtmlLine(content);
+
+            //End h1
             htmlContentBuilder.AppendHtmlLine("</h1>");
 
             return htmlContentBuilder;
         }
 
         [Produces("text/html")]
-        public static IHtmlContent HiddenMainHeading(string content, string htmlClass = "")
+        public static IHtmlContent HiddenMainHeading(string content, string htmlClass = "", Dictionary<string, string> attributes = null)
         {
+            if (attributes == null)
+            {
+                attributes.Add("", "");
+            }
+
             IHtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
 
-            htmlContentBuilder.AppendHtmlLine("<h1 id='ez-main-heading' style='visibility: hidden;' class='" + htmlClass + "'>");
+            //Start h1
+            htmlContentBuilder.AppendHtml("<h1 id='ez-main-heading' style='visibility: hidden;' class='" + htmlClass + "'");
+            foreach(KeyValuePair<string, string> attribute in attributes)
+            {
+                htmlContentBuilder.AppendHtml(attribute.Key + "='" + attribute.Value + "'");
+            }
+            htmlContentBuilder.AppendHtml(">");
+
+            //Content
             htmlContentBuilder.AppendHtmlLine(content);
+
+            //End h1
             htmlContentBuilder.AppendHtmlLine("</h1>");
 
             return htmlContentBuilder;
