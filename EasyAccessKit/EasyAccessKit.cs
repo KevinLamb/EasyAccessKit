@@ -76,6 +76,7 @@ namespace EasyAccessKit
         }
         #endregion
 
+        #region Easy Table
         public static IHtmlContent EasyTable(List<object> list)
         {
             HtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
@@ -108,5 +109,6 @@ namespace EasyAccessKit
             //End table
             return htmlContentBuilder;
         }
+        #endregion
     }
 }
