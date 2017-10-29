@@ -4,6 +4,7 @@ using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Html;
 using System.Reflection;
+
 namespace EasyAccessKit
 {
     public static class EasyAccessKit
@@ -77,6 +78,7 @@ namespace EasyAccessKit
         #endregion
 
         #region Easy Table
+
         public static IHtmlContent EasyTable(List<object> list)
         {
             HtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
