@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Html;
-
+using System.Reflection;
 namespace EasyAccessKit
 {
     public static class EasyAccessKit
     {
+        #region Skip Menu
         [Produces("text/html")]
         public static IHtmlContent SkipMenu()
         {
@@ -71,6 +72,40 @@ namespace EasyAccessKit
             //End h1
             htmlContentBuilder.AppendHtmlLine("</h1>");
 
+            return htmlContentBuilder;
+        }
+        #endregion
+
+        public static IHtmlContent EasyTable(List<object> list)
+        {
+            HtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
+
+            //Start table
+            htmlContentBuilder.AppendHtmlLine("<table>");
+
+            //Table heading
+            htmlContentBuilder.AppendHtmlLine("<tr>");
+            foreach(object item in list)
+            {
+                var PropertyInfos = item.GetType().GetProperties();
+                foreach(PropertyInfo info in PropertyInfos)
+                {
+                    htmlContentBuilder.AppendHtmlLine("<th scope='col'>" + info.Name + "</th>");
+                }
+            }
+            htmlContentBuilder.AppendHtmlLine("</tr>");
+
+            foreach (object item in list)
+            {
+                htmlContentBuilder.AppendHtmlLine("<tr>");
+                var PropertyInfos = item.GetType().GetProperties();
+                foreach (PropertyInfo info in PropertyInfos)
+                {
+                    htmlContentBuilder.AppendHtmlLine("<td>" + info.GetValue(item) + "</td>");
+                }
+                htmlContentBuilder.AppendHtmlLine("</tr>");
+            }
+            //End table
             return htmlContentBuilder;
         }
     }
