@@ -25,7 +25,7 @@ namespace EasyAccessKit
         {
             if (attributes == null)
             {
-                attributes.Add("", "");
+                attributes = new Dictionary<string, string> { { "", "" } };
             }
 
             IHtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
@@ -52,7 +52,7 @@ namespace EasyAccessKit
         {
             if (attributes == null)
             {
-                attributes.Add("", "");
+                attributes = new Dictionary<string, string> { { "","" } };
             }
 
             IHtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
