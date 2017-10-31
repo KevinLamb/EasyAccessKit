@@ -119,8 +119,8 @@ namespace EasyAccessKit
             HtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
 
             htmlContentBuilder.AppendHtml(
-                "< div id='ez-carousel' class='carousel slide' data-ride='carousel' data-interval='false'>" +
-                "<ol class='carousel - indicators'>"
+                "<div id='ez-carousel' class='carousel slide' data-ride='carousel' data-interval='false'>" +
+                "<ol class='carousel-indicators'>"
                 );
 
             //Adding tabs at bottom.
@@ -137,7 +137,7 @@ namespace EasyAccessKit
             foreach(CarouselItem item in items)
             {
                 htmlContentBuilder.AppendHtml("<div class='carousel-item'>" +
-                    "<img class='d-blockw-100' src='" + item.ImageUrl + "' alt='" + (String.IsNullOrEmpty(item.AltText) ? item.SubHeading : item.AltText) + ">" +
+                    "<img class='d-blockw-100' src='" + item.ImageUrl + "' alt='" + (String.IsNullOrEmpty(item.AltText) ? item.SubHeading : item.AltText) + "'>" +
                     "<h3>" + item.Title + "</h3>" +
                     "<p>" + item.SubHeading + "</p>" +
                     "</div>"
@@ -145,11 +145,11 @@ namespace EasyAccessKit
             }
             htmlContentBuilder.AppendHtmlLine("</div>");
 
-            htmlContentBuilder.AppendHtml("<a class='carousel-control-prev' href='#carouselExampleIndicators' role='button' data-slide='prev'>" +
+            htmlContentBuilder.AppendHtml("<a class='carousel-control-prev' href='#ez-carousel' role='button' data-slide='prev'>" +
                 "<span class='carousel-control-prev-icon' aria-hidden='true'></span>" +
                 "<span class='sr-only'>Previous</span>"+
                 "</a>" +
-                "<a class='carousel-control-next' href='#carouselExampleIndicators' role='button' data-slide='next'>" +
+                "<a class='carousel-control-next' href='#ez-carousel' role='button' data-slide='next'>" +
                 "<span class='carousel-control-next-icon' aria-hidden='true'></span>" +
                 "<span class='sr-only'>Next</span>" +
                 "</a>" +
