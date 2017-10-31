@@ -1,0 +1,9 @@
+﻿@model IEnumerable<EasyAccessKit.CarouselClass.CarouselItem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@EasyAccessKit.MainHeading(ViewData["Title"].ToString())
+
+@EasyAccessKit.Carousel(Model);

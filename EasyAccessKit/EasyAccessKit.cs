@@ -4,6 +4,7 @@ using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Html;
 using System.Reflection;
+using EasyAccessKit.CarouselClass;
 
 namespace EasyAccessKit
 {
@@ -112,5 +113,50 @@ namespace EasyAccessKit
             return htmlContentBuilder;
         }
         #endregion
+
+        public static IHtmlContent Carousel(List<CarouselItem> items)
+        {
+            HtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
+
+            htmlContentBuilder.AppendHtml(
+                "< div id='ez-carousel' class='carousel slide' data-ride='carousel' data-interval='false'>" +
+                "<ol class='carousel - indicators'>"
+                );
+
+            //Adding tabs at bottom.
+            for(int i = 0; i > items.Count; i++)
+            {
+                htmlContentBuilder.AppendHtmlLine("<li data-target='#ez-carousel' data-slide-to=" + i.ToString() + "></li>");
+            }
+
+            htmlContentBuilder.AppendHtmlLine("</ol>" + 
+                "<div class='carousel-inner'>"
+                );
+
+            //Adding each item
+            foreach(CarouselItem item in items)
+            {
+                htmlContentBuilder.AppendHtml("<div class='carousel-item'>" +
+                    "<img class='d-blockw-100' src='" + item.ImageUrl + "' alt='" + (String.IsNullOrEmpty(item.AltText) ? item.SubHeading : item.AltText) + ">" +
+                    "<h3>" + item.Title + "</h3>" +
+                    "<p>" + item.SubHeading + "</p>" +
+                    "</div>"
+                    );
+            }
+            htmlContentBuilder.AppendHtmlLine("</div>");
+
+            htmlContentBuilder.AppendHtml("<a class='carousel-control-prev' href='#carouselExampleIndicators' role='button' data-slide='prev'>" +
+                "<span class='carousel-control-prev-icon' aria-hidden='true'></span>" +
+                "<span class='sr-only'>Previous</span>"+
+                "</a>" +
+                "<a class='carousel-control-next' href='#carouselExampleIndicators' role='button' data-slide='next'>" +
+                "<span class='carousel-control-next-icon' aria-hidden='true'></span>" +
+                "<span class='sr-only'>Next</span>" +
+                "</a>" +
+                "</ div >"
+            );
+
+            return htmlContentBuilder;
+        }
     }
 }
