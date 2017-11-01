@@ -80,7 +80,7 @@ namespace EasyAccessKit
 
         #region Easy Table
 
-        public static IHtmlContent EasyTable(List<object> list)
+        public static IHtmlContent EasyTable(IEnumerable<object> list)
         {
             HtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
 
