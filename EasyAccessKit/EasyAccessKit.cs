@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Html;
 using System.Reflection;
 using EasyAccessKit.CarouselClass;
+using System.Linq;
 
 namespace EasyAccessKit
 {
@@ -83,9 +84,9 @@ namespace EasyAccessKit
         public static IHtmlContent EasyTable(IEnumerable<object> list)
         {
             HtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
-
+            
             //Start table
-            htmlContentBuilder.AppendHtmlLine("<table>");
+            htmlContentBuilder.AppendHtmlLine("<table class='table'>");
 
             //Table heading
             htmlContentBuilder.AppendHtmlLine("<tr>");
@@ -99,14 +100,23 @@ namespace EasyAccessKit
             }
             htmlContentBuilder.AppendHtmlLine("</tr>");
 
+            //Content of tables
             foreach (object item in list)
             {
                 htmlContentBuilder.AppendHtmlLine("<tr>");
+
                 var PropertyInfos = item.GetType().GetProperties();
-                foreach (PropertyInfo info in PropertyInfos)
+
+                //Gets first column data and adds scope
+                PropertyInfo firstInfo = PropertyInfos.FirstOrDefault();
+                htmlContentBuilder.AppendHtmlLine("<td scope='row'>" + firstInfo.GetValue(item) + "</td>");
+
+                //Loop through rest of data
+                foreach (PropertyInfo info in PropertyInfos.Skip(1))
                 {
-                    htmlContentBuilder.AppendHtmlLine("<td>" + info.GetValue(item) + "</td>");
+                    htmlContentBuilder.AppendHtmlLine("<td>" + info.GetValue(item) + "</td>");  
                 }
+
                 htmlContentBuilder.AppendHtmlLine("</tr>");
             }
             //End table
