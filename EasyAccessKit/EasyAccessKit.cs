@@ -86,7 +86,7 @@ namespace EasyAccessKit
         #endregion
 
         #region Easy Table
-
+        [Produces("text/html")]
         public static IHtmlContent EasyTable(IEnumerable<object> list)
         {
             HtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
@@ -131,6 +131,7 @@ namespace EasyAccessKit
         #endregion
 
         #region Carousel
+        [Produces("text/html")]
         public static IHtmlContent Carousel(List<CarouselItem> items)
         {
             HtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
