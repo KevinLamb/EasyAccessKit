@@ -36,9 +36,12 @@ namespace EasyAccessKit
 
             //Start h1
             htmlContentBuilder.AppendHtml("<h1 id='ez-main-heading' class='" + htmlClass + "'");
+
+            //Set up attributes
             foreach (KeyValuePair<string, string> attribute in attributes)
             {
-                htmlContentBuilder.AppendHtml(attribute.Key + "='" + attribute.Value + "'");
+                if(!String.IsNullOrEmpty(attribute.Key))
+                    htmlContentBuilder.AppendHtml(attribute.Key + "='" + attribute.Value + "'");
             }
             htmlContentBuilder.AppendHtml(">");
 
@@ -63,9 +66,12 @@ namespace EasyAccessKit
 
             //Start h1
             htmlContentBuilder.AppendHtml("<h1 id='ez-main-heading' style='visibility: hidden;' class='" + htmlClass + "'");
+
+            //Set up attributes
             foreach(KeyValuePair<string, string> attribute in attributes)
             {
-                htmlContentBuilder.AppendHtml(attribute.Key + "='" + attribute.Value + "'");
+                if (!String.IsNullOrEmpty(attribute.Key))
+                    htmlContentBuilder.AppendHtml(attribute.Key + "='" + attribute.Value + "'");
             }
             htmlContentBuilder.AppendHtml(">");
 
@@ -124,6 +130,7 @@ namespace EasyAccessKit
         }
         #endregion
 
+        #region Carousel
         public static IHtmlContent Carousel(List<CarouselItem> items)
         {
             HtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
@@ -136,7 +143,7 @@ namespace EasyAccessKit
             //Adding tabs at bottom.
             for(int i = 0; i > items.Count; i++)
             {
-                htmlContentBuilder.AppendHtmlLine("<li data-target='#ez-carousel' data-slide-to=" + i.ToString() + "></li>");
+                htmlContentBuilder.AppendHtmlLine("<li data-target='#ez-carousel' data-slide-to='" + i.ToString() + "'></li>");
             }
 
             htmlContentBuilder.AppendHtmlLine("</ol>" + 
@@ -163,10 +170,12 @@ namespace EasyAccessKit
                 "<span class='carousel-control-next-icon' aria-hidden='true'></span>" +
                 "<span class='sr-only'>Next</span>" +
                 "</a>" +
-                "</ div >"
+                "</div>"
             );
 
             return htmlContentBuilder;
         }
+
+        #endregion
     }
 }
