@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Html;
 using System.Reflection;
 using EasyAccessKit.CarouselClass;
 using System.Linq;
+using Newtonsoft.Json;
 
 namespace EasyAccessKit
 {
@@ -85,7 +86,7 @@ namespace EasyAccessKit
         }
         #endregion
 
-         #region Easy Table
+        #region Easy Table
         [Produces("text/html")]
         public static IHtmlContent EasyTable(IEnumerable<object> list, string htmlClass = "")
         {
