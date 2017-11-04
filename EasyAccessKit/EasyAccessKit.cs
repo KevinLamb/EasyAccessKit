@@ -85,14 +85,14 @@ namespace EasyAccessKit
         }
         #endregion
 
-        #region Easy Table
+         #region Easy Table
         [Produces("text/html")]
-        public static IHtmlContent EasyTable(IEnumerable<object> list)
+        public static IHtmlContent EasyTable(IEnumerable<object> list, string htmlClass = "")
         {
             HtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
             
             //Start table
-            htmlContentBuilder.AppendHtmlLine("<table class='table'>");
+            htmlContentBuilder.AppendHtmlLine("<table class='table " + htmlClass + "'>");
 
             //Table heading
             htmlContentBuilder.AppendHtmlLine("<tr>");
