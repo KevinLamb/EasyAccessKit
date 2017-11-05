@@ -1,11 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyAccessKit", "EasyAccessKit\EasyAccessKit.csproj", "{B8BC7E66-766B-4AA3-8990-07532C3A7745}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAccessKit", "EasyAccessKit\EasyAccessKit.csproj", "{B8BC7E66-766B-4AA3-8990-07532C3A7745}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoEasyAccess", "Demo\DemoEasyAccess\DemoEasyAccess.csproj", "{C1C0C77F-5B96-4945-A999-AFF9DE02DF5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoEasyAccess", "Demo\DemoEasyAccess\DemoEasyAccess.csproj", "{C1C0C77F-5B96-4945-A999-AFF9DE02DF5C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGetPackages", "NuGetPackages", "{70DC1D7D-A82B-4BCE-A37F-B17109B5E2AE}"
+	ProjectSection(SolutionItems) = preProject
+		NuGetPackages\EasyAccessKit.0.0.1.nupkg = NuGetPackages\EasyAccessKit.0.0.1.nupkg
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
