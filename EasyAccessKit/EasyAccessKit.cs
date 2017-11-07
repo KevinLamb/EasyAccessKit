@@ -12,6 +12,13 @@ namespace EasyAccessKit
 {
     public static class EasyAccessKit
     {
+        private static string bsVersion = "4b";
+
+        public static void BootstrapVersion(string bootstrapVersion)
+        {
+            bsVersion = bootstrapVersion;
+        }
+
         #region Skip Menu
         [Produces("text/html")]
         public static IHtmlContent SkipMenu()
