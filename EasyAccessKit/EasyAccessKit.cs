@@ -12,7 +12,8 @@ namespace EasyAccessKit
 {
     public static class EasyAccessKit
     {
-        private static string bsVersion = "4b";
+        //Default is Bootstrap 4 Beta
+        private static string bsVersion = "4.0.0b";
 
         public static void BootstrapVersion(string bootstrapVersion)
         {
@@ -22,7 +23,7 @@ namespace EasyAccessKit
         #region Skip Menu
         [Produces("text/html")]
         public static IHtmlContent SkipMenu()
-        {
+        { 
             IHtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
 
             htmlContentBuilder.AppendHtmlLine("<nav role='navigation' style='opacity: 0'>");
@@ -94,6 +95,7 @@ namespace EasyAccessKit
         #endregion
 
         #region Easy Table
+
         [Produces("text/html")]
         public static IHtmlContent EasyTable(IEnumerable<object> list, string htmlClass = "")
         {
@@ -144,44 +146,50 @@ namespace EasyAccessKit
         {
             HtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
 
-            htmlContentBuilder.AppendHtml(
-                "<div id='ez-carousel' class='carousel slide' data-ride='carousel' data-interval='false'>" +
-                "<ol class='carousel-indicators'>"
-                );
-
-            //Adding tabs at bottom.
-            for(int i = 0; i > items.Count; i++)
+            if (bsVersion == "4.0.0b")
             {
-                htmlContentBuilder.AppendHtmlLine("<li data-target='#ez-carousel' data-slide-to='" + i.ToString() + "'></li>");
-            }
-
-            htmlContentBuilder.AppendHtmlLine("</ol>" + 
-                "<div class='carousel-inner'>"
-                );
-
-            //Adding each item
-            foreach(CarouselItem item in items)
-            {
-                htmlContentBuilder.AppendHtml("<div class='carousel-item'>" +
-                    "<img class='d-blockw-100' src='" + item.ImageUrl + "' alt='" + (String.IsNullOrEmpty(item.AltText) ? item.SubHeading : item.AltText) + "'>" +
-                    "<h3>" + item.Title + "</h3>" +
-                    "<p>" + item.SubHeading + "</p>" +
-                    "</div>"
+                htmlContentBuilder.AppendHtml(
+                    "<div id='ez-carousel' class='carousel slide' data-ride='carousel' data-interval='false'>" +
+                    "<ol class='carousel-indicators'>"
                     );
+
+                //Adding tabs at bottom.
+                for (int i = 0; i > items.Count; i++)
+                {
+                    htmlContentBuilder.AppendHtmlLine("<li data-target='#ez-carousel' data-slide-to='" + i.ToString() + "'></li>");
+                }
+
+                htmlContentBuilder.AppendHtmlLine("</ol>" +
+                    "<div class='carousel-inner'>"
+                    );
+
+                //Adding each item
+                foreach (CarouselItem item in items)
+                {
+                    htmlContentBuilder.AppendHtml("<div class='carousel-item'>" +
+                        "<img class='d-blockw-100' src='" + item.ImageUrl + "' alt='" + (String.IsNullOrEmpty(item.AltText) ? item.SubHeading : item.AltText) + "'>" +
+                        "<h3>" + item.Title + "</h3>" +
+                        "<p>" + item.SubHeading + "</p>" +
+                        "</div>"
+                        );
+                }
+                htmlContentBuilder.AppendHtmlLine("</div>");
+
+                htmlContentBuilder.AppendHtml("<a class='carousel-control-prev' href='#ez-carousel' role='button' data-slide='prev'>" +
+                    "<span class='carousel-control-prev-icon' aria-hidden='true'></span>" +
+                    "<span class='sr-only'>Previous</span>" +
+                    "</a>" +
+                    "<a class='carousel-control-next' href='#ez-carousel' role='button' data-slide='next'>" +
+                    "<span class='carousel-control-next-icon' aria-hidden='true'></span>" +
+                    "<span class='sr-only'>Next</span>" +
+                    "</a>" +
+                    "</div>"
+                );
             }
-            htmlContentBuilder.AppendHtmlLine("</div>");
+            else if(bsVersion == "3.3.7")
+            {
 
-            htmlContentBuilder.AppendHtml("<a class='carousel-control-prev' href='#ez-carousel' role='button' data-slide='prev'>" +
-                "<span class='carousel-control-prev-icon' aria-hidden='true'></span>" +
-                "<span class='sr-only'>Previous</span>"+
-                "</a>" +
-                "<a class='carousel-control-next' href='#ez-carousel' role='button' data-slide='next'>" +
-                "<span class='carousel-control-next-icon' aria-hidden='true'></span>" +
-                "<span class='sr-only'>Next</span>" +
-                "</a>" +
-                "</div>"
-            );
-
+            }
             return htmlContentBuilder;
         }
 

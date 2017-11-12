@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2006
+VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyAccessKit", "EasyAccessKit\EasyAccessKit.csproj", "{B8BC7E66-766B-4AA3-8990-07532C3A7745}"
 EndProject
@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGetPackages", "NuGetPacka
 	ProjectSection(SolutionItems) = preProject
 		NuGetPackages\EasyAccessKit.0.0.1.nupkg = NuGetPackages\EasyAccessKit.0.0.1.nupkg
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoEasyAccessBS3.3.7", "Demo\DemoEasyAccessBS3.3.7\DemoEasyAccessBS3.3.7.csproj", "{DA2A405D-7FD0-416F-AA8A-7286CC8D8B97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 		{C1C0C77F-5B96-4945-A999-AFF9DE02DF5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1C0C77F-5B96-4945-A999-AFF9DE02DF5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1C0C77F-5B96-4945-A999-AFF9DE02DF5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA2A405D-7FD0-416F-AA8A-7286CC8D8B97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA2A405D-7FD0-416F-AA8A-7286CC8D8B97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA2A405D-7FD0-416F-AA8A-7286CC8D8B97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA2A405D-7FD0-416F-AA8A-7286CC8D8B97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
