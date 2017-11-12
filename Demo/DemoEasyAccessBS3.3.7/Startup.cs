@@ -22,6 +22,7 @@ namespace DemoEasyAccessBS3._3._7
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            EasyAccessKit.EasyAccessKit.BootstrapVersion("3.3.7");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
