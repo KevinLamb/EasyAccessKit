@@ -6,14 +6,14 @@ using Microsoft.AspNetCore.Html;
 using System.Reflection;
 using EasyAccessKit.CarouselClass;
 using System.Linq;
-using Newtonsoft.Json;
+
 
 namespace EasyAccessKit
 {
-    public static class EasyAccessKit
+    public class EasyAccessKit
     {
         //Default is Bootstrap 4 Beta
-        private static string bsVersion = "4.0.0b";
+        private static string bsVersion = Constants.Bootstrap4Beta;
 
         public static void BootstrapVersion(string bootstrapVersion)
         {
