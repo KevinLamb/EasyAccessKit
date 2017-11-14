@@ -208,7 +208,7 @@ namespace EasyAccessKit
             else if(bsVersion == "3.3.7")
             {
                 htmlContentBuilder.AppendHtml(
-                    "<div id='ez-carousel' class='carousel slide' data-ride='carousel'>" +
+                    "<div id='ez-carousel' class='carousel slide' data-interval='false' data-ride='carousel'>" +
                     "<ol class='carousel-indicators'>"
                     );
 

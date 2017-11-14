@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using DemoEasyAccess.Models;
-namespace DemoEasyAccess.Controllers
+using DemoEasyAccessBS3._3._7.Models;
+namespace DemoEasyAccessBS3._3._7.Controllers
 {
     public class EasyTableController : Controller
     {
