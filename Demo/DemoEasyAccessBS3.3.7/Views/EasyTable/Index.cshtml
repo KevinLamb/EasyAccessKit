@@ -1,0 +1,9 @@
+﻿@model IEnumerable<DemoEasyAccess.Models.EasyTableModel>
+
+@{
+    ViewData["Title"] = "Easy Table";
+}
+
+@EasyAccessKit.MainHeading(ViewData["Title"].ToString())
+
+@EasyAccessKit.EasyTable(Model)

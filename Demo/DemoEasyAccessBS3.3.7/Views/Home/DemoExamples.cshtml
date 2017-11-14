@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Demo Examples";
+}
+
+@EasyAccessKit.MainHeading(ViewData["Title"].ToString())
+
+<p>Currently this is just where to just to test out the EasyAccessKit. Nothing is set in stone here.</p>
+<ul>
+    <li><a asp-controller="SkipMenu"
+   asp-action="Index">Skip Menus</a></li>
+    <li>
+        <a asp-controller="EasyTable"
+           asp-action="Index">Easy Table</a>
+    </li>
+    <li>
+        <a asp-controller="Carousel"
+           asp-action="Index">Carousel</a>
+    </li>
+</ul>

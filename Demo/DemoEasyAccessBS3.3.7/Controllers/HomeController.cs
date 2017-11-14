@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using DemoEasyAccessBS3._3._7.Models;
+using DemoEasyAccess.Models;
 
-namespace DemoEasyAccessBS3._3._7.Controllers
+namespace DemoEasyAccess.Controllers
 {
     public class HomeController : Controller
     {
@@ -22,10 +22,8 @@ namespace DemoEasyAccessBS3._3._7.Controllers
             return View();
         }
 
-        public IActionResult Contact()
+        public IActionResult DemoExamples()
         {
-            ViewData["Message"] = "Your contact page.";
-
             return View();
         }
 
