@@ -277,5 +277,32 @@ namespace EasyAccessKit
         }
 
         #endregion
+
+        #region Figure
+
+        [Produces("text/html")]
+        public static IHtmlContent Figure(string imageSrc, string imageAlt, string description)
+        {
+            HtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
+
+            //Start figure
+            htmlContentBuilder.AppendHtmlLine("<figure role='group'>");
+
+            //Add image
+            htmlContentBuilder.AppendHtmlLine("<img src='" + imageSrc + "' alt='" + imageAlt + "'>");
+
+            //Adding caption
+            htmlContentBuilder.AppendHtml("<figcaption>"
+                + description
+                + "</figcaption>"
+                );
+
+           //End figure
+            htmlContentBuilder.AppendHtmlLine("</figure>");
+
+            return htmlContentBuilder;
+        }
+
+        #endregion
     }
 }
