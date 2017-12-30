@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace EasyAccessKit
 {
-    public class EasyAccessKit
+    public class EasyAccess
     {
         //Default is Bootstrap 4 Beta
         private static string bsVersion = Constants.Bootstrap4Beta;
