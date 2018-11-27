@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Html;
-using System.Reflection;
-using EasyAccessKit.CarouselClass;
+using System;
+using System.Collections.Generic;
 using System.Linq;
-
+using System.Reflection;
 
 namespace EasyAccessKit
 {
@@ -14,6 +11,7 @@ namespace EasyAccessKit
     {
 
         #region Skip Menu
+
         [Produces("text/html")]
         public static IHtmlContent SkipMenu()
         { 
@@ -85,6 +83,7 @@ namespace EasyAccessKit
 
             return htmlContentBuilder;
         }
+
         #endregion
 
         #region Easy Table
@@ -131,6 +130,7 @@ namespace EasyAccessKit
             //End table
             return htmlContentBuilder;
         }
+
         #endregion
 
         #region Figure
@@ -159,5 +159,6 @@ namespace EasyAccessKit
         }
 
         #endregion
+
     }
 }

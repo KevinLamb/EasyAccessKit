@@ -4,43 +4,42 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace EasyAccessKit
 {
     public class Bs3 : GlobalFeatures
     {
         #region Carousel
+
         [Produces("text/html")]
         public static IHtmlContent Carousel(List<CarouselItem> items)
         {
             HtmlContentBuilder htmlContentBuilder = new HtmlContentBuilder();
-
             
-                htmlContentBuilder.AppendHtml(
-                    "<div id='ez-carousel' class='carousel slide' data-interval='false' data-ride='carousel'>" +
-                    "<ol class='carousel-indicators'>"
-                    );
-
-                //Adding tabs at bottom.
-                for (int i = 0; i > items.Count; i++)
-                {
-                    if (i == 0)
-                    {
-                        htmlContentBuilder.AppendHtmlLine("<li data-target='#ez-carousel' data-slide-to='" + i.ToString() + "' class='active'></li>");
-                    }
-                    else
-                    {
-                        htmlContentBuilder.AppendHtmlLine("<li data-target='#ez-carousel' data-slide-to='" + i.ToString() + "'></li>");
-                    }
-                }
-
-                htmlContentBuilder.AppendHtmlLine("</ol>");
-
-                //Wrapper for slides
-                htmlContentBuilder.AppendHtml(
-                    "<div class='carousel-inner' role='listbox'>"
+            htmlContentBuilder.AppendHtml(
+                "<div id='ez-carousel' class='carousel slide' data-interval='false' data-ride='carousel'>" +
+                "<ol class='carousel-indicators'>"
                 );
+
+            //Adding tabs at bottom.
+            for (int i = 0; i > items.Count; i++)
+            {
+                if (i == 0)
+                {
+                    htmlContentBuilder.AppendHtmlLine("<li data-target='#ez-carousel' data-slide-to='" + i.ToString() + "' class='active'></li>");
+                }
+                else
+                {
+                    htmlContentBuilder.AppendHtmlLine("<li data-target='#ez-carousel' data-slide-to='" + i.ToString() + "'></li>");
+                }
+            }
+
+            htmlContentBuilder.AppendHtmlLine("</ol>");
+
+            //Wrapper for slides
+            htmlContentBuilder.AppendHtml(
+                "<div class='carousel-inner' role='listbox'>"
+            );
 
             //Adding each item
             foreach (CarouselItem item in items)
