@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using EasyAccessKit;
 
 namespace DemoEasyAccessBS3._3._7
 {
@@ -23,7 +22,6 @@ namespace DemoEasyAccessBS3._3._7
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            EasyAccess.BootstrapVersion(Constants.Bootstrap3);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
